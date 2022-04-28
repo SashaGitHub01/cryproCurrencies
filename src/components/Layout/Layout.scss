@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.layout {
+   &__row {
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   &__content {
+      width: 100%;
+      min-height: 100vh;
+      background-image: radial-gradient(at right bottom, $bg_secondary, $bg_primary);
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 2.5rem 3rem $header_width + (2.5 * 10);
+
+      @media (max-width: $lg) {
+         padding: 2.5rem;
+      }
+   }
+
+   & .content {
+      flex: 1 1 auto;
+      border-radius: 10px;
+   }
+}

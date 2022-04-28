@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.home {
+   &__head {
+   }
+   &__title {
+      @include font-h2;
+      font-weight: 500;
+   }
+
+   .stats {
+      padding: 2.2rem 0 3rem 0;
+      &__grid {
+      }
+      .stats-item {
+         &__head {
+         }
+         &__title {
+            @include font-main;
+            color: $text_secondary;
+         }
+         &__value {
+            span {
+               @include font-lg;
+               font-weight: 500;
+            }
+         }
+      }
+   }
+
+   .crypto-top {
+      &__head {
+         padding-bottom: 0.5rem;
+      }
+      &__title {
+         @include font-h2;
+         font-weight: 500;
+      }
+   }
+}

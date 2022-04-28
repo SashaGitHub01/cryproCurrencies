@@ -1,0 +1,38 @@
+@import "variables";
+
+@mixin font-sm {
+   color: $text_primary;
+   font-size: $font_sm;
+   line-height: 1.8rem;
+}
+
+@mixin font-main {
+   color: $text_primary;
+   font-size: $font_main;
+   line-height: 2.1rem;
+}
+
+@mixin font-md {
+   color: $text_primary;
+   font-size: $font_md;
+   line-height: 2.2rem;
+}
+
+@mixin font-lg {
+   color: $text_primary;
+   font-size: $font_lg;
+   line-height: 2.4rem;
+}
+
+@mixin font-xl {
+   color: $text_primary;
+   font-size: $font_xl;
+   line-height: 2.7rem;
+}
+
+@mixin font-h2 {
+   color: $text_primary;
+   font-size: $font_h2;
+   line-height: 3rem;
+   font-weight: 500;
+}
