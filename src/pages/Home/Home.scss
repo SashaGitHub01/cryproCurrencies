@@ -50,11 +50,13 @@
 
    .home-news {
       padding-top: 3rem;
+
       &__head {
          display: flex;
          align-items: center;
          justify-content: space-between;
       }
+
       &__title {
          @include font-h2;
       }

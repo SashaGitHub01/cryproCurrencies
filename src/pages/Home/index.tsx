@@ -9,12 +9,13 @@ import CryptocurrsList from '../../components/CryptocurrsList'
 import { Link } from 'react-router-dom'
 import NewsList from '../../components/NewsLists'
 import { fetchNews } from '../../redux/actions/newsA'
+import Loader from '../../components/Loader'
 
 const Home: React.FC = () => {
    const limit = 10;
    const dispatch = useAppDispatch()
    const { stats, isFetching, coins } = useTypedSelector(state => state.coinsAndStats)
-   const { news } = useTypedSelector(state => state.news)
+   const { news, isFetching: isFetchingNews } = useTypedSelector(state => state.news)
 
    useEffect(() => {
       dispatch(fetchCoinsAndStats(limit))
@@ -103,7 +104,10 @@ const Home: React.FC = () => {
                   Show more
                </Link>
             </div>
-            <CryptocurrsList coins={coins} />
+            {isFetching
+               ? <Loader />
+               : <CryptocurrsList coins={coins} />
+            }
          </div>
          <div className="home-news">
             <div className="home-news__head">
@@ -114,7 +118,12 @@ const Home: React.FC = () => {
                   Show more
                </Link>
             </div>
-            <NewsList news={news} />
+            {isFetchingNews
+               ? <Loader />
+               : news
+                  ? <NewsList news={news} />
+                  : <Loader />
+            }
          </div>
       </div>
    )

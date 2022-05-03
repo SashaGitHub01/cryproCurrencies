@@ -8,4 +8,14 @@
 
 .news-selector {
    width: 150px;
+
+   &__opt > div {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      img {
+         max-width: 15px;
+      }
+   }
 }

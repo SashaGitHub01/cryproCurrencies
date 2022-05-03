@@ -34,8 +34,9 @@ const NewsSelect: React.FC = ({ }) => {
                Cryptocurrency
             </Select.Option>
             {coins?.length && coins.map((c) => (
-               <Select.Option value={c.name.toLowerCase()} key={c.uuid}>
-                  {c.name}
+               <Select.Option value={c.name.toLowerCase()} key={c.uuid} className={'news-selector__opt'}>
+                  <span>{c.name}</span>
+                  <img src={c.iconUrl} alt={c.name} />
                </Select.Option>
             ))}
          </Select>
