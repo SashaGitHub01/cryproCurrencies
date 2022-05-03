@@ -1,0 +1,60 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+$p: 0.8rem;
+
+.news-item {
+   box-shadow: $cardShadow;
+   background: #fff;
+   display: flex;
+   flex-direction: column;
+
+   &__head {
+      display: flex;
+      padding: 1rem $p;
+      gap: 0.7rem;
+   }
+   &__img {
+      align-self: center;
+      flex: 0 0 50px;
+   }
+   &__title {
+   }
+   &__name {
+      @include font-main;
+      color: $bg_primary;
+   }
+   &__body {
+      padding: 0.5rem $p;
+      flex: 1 1 auto;
+   }
+   &__descr {
+      @include font-sm;
+      color: rgb(7, 7, 7);
+   }
+
+   &__foot {
+      padding: $p;
+      @include font-sm;
+      color: rgb(112, 112, 112);
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &::before {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 1px;
+         background-color: $text_secondary;
+         left: 0;
+         top: 0;
+      }
+   }
+   &__time {
+      font-weight: 500;
+   }
+
+   &__creator {
+   }
+}

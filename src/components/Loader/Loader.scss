@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+$second: #00ba0069;
+
+.loader_cont {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex: 1 1 auto;
+}
+
+.dots-5 {
+   width: 18px;
+   height: 18px;
+   background: $bg_secondary;
+   border-radius: 50%;
+   box-shadow: 25px 0 $second, -25px 0 $bg_secondary;
+   animation: d5 1s infinite linear alternate;
+}
+@keyframes d5 {
+   0% {
+      box-shadow: 25px 0 $bg_secondary, -25px 0 $second;
+      background: $bg_secondary;
+   }
+   33% {
+      box-shadow: 25px 0 $bg_secondary, -25px 0 $second;
+      background: $second;
+   }
+   66% {
+      box-shadow: 25px 0 $second, -25px 0 $bg_secondary;
+      background: $second;
+   }
+}
