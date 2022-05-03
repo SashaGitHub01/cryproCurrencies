@@ -1,0 +1,14 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.news {
+   &__head {
+   }
+   &__title {
+      @include font-h2;
+   }
+   &__content {
+   }
+   &__nodata {
+   }
+}

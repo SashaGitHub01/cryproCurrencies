@@ -1,5 +1,6 @@
 import {
-   TransactionOutlined, RiseOutlined, BellOutlined, HomeOutlined, MailOutlined, GithubFilled
+   TransactionOutlined, RiseOutlined, BellOutlined, HomeOutlined, MailOutlined, GithubFilled,
+   CaretDownFilled, CaretUpFilled,
 } from '@ant-design/icons'
 
 export {
@@ -8,5 +9,7 @@ export {
    BellOutlined as NewsIcon,
    HomeOutlined as HomeIcon,
    GithubFilled as GitIcon,
-   MailOutlined as MailIcon
+   MailOutlined as MailIcon,
+   CaretDownFilled as ArrowDownIcon,
+   CaretUpFilled as ArrowUpIcon
 }

@@ -39,7 +39,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({ uuid, name, color, iconUrl, ran
                      Price:
                   </div>
                   <div className="crypto-card-st__val">
-                     {formatNums(price, 3)}
+                     {price ? formatNums(price, 3) : '-'}
                   </div>
                </div>
                <div className="crypto-card__stat crypto-card-st">

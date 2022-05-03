@@ -31,11 +31,32 @@
 
    .crypto-top {
       &__head {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
          padding-bottom: 0.5rem;
       }
       &__title {
          @include font-h2;
          font-weight: 500;
+      }
+
+      &__link {
+         @include font-lg;
+         color: $text_secondary;
+         text-decoration: underline;
+      }
+   }
+
+   .home-news {
+      padding-top: 3rem;
+      &__head {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+      &__title {
+         @include font-h2;
       }
    }
 }

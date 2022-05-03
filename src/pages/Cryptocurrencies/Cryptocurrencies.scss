@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.currensies {
+   flex: 1 1 auto;
+   display: flex;
+   flex-direction: column;
+   &__nodata {
+      text-align: center;
+      @include font-md;
+      padding: 2rem 0;
+   }
+
+   &__head {
+      padding: 2rem 0;
+      display: block;
+   }
+   &__title {
+      @include font-h2;
+   }
+
+   &__form {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+   }
+
+   &__input {
+      flex: 1 1 auto;
+      margin: 0 m !important;
+   }
+   &__btn {
+      .search-btn {
+      }
+   }
+}

@@ -10,7 +10,8 @@ $font_h2: 2.6rem;
 $text_primary: rgb(255, 255, 255);
 $text_secondary: rgb(231, 231, 231);
 $bg_primary: #4241dd;
-$bg_secondary: #37b696;
+$bg_green: #37b696;
+$bg_secondary: #00ba00;
 $pink: #0071bd;
 $light-blue: #e4f4fc;
 $border: #d9d9d9;
@@ -24,3 +25,7 @@ $xxl: 1600px;
 
 //header
 $header_width: 250px;
+
+//shadows
+$cardShadow: 0px 3px 5px 1px rgba(255, 255, 255, 0.288);
+$cardShadowHover: 0px 3px 8px 1px rgba(255, 255, 255, 0.712);

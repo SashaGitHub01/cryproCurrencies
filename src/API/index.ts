@@ -12,3 +12,11 @@ export const coinrankingApi = axios.create({
       'X-RapidAPI-Key': process.env.REACT_APP_API_KEY as string
    }
 })
+
+export const newsApi = axios.create({
+   baseURL: process.env.REACT_APP_NEWS_URL as string,
+   headers: {
+      'X-RapidAPI-Host': process.env.REACT_APP_NEWS_HOST as string,
+      'X-RapidAPI-Key': process.env.REACT_APP_NEWSAPI_KEY as string
+   }
+})

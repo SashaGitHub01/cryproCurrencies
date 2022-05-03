@@ -1,9 +1,6 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-$cardShadow: 0px 3px 5px 1px rgba(255, 255, 255, 0.288);
-$cardShadowHover: 0px 3px 8px 1px rgba(255, 255, 255, 0.712);
-
 .crypto-card {
    border: 1px solid rgba(255, 255, 255, 0.479);
    border-top: 0;

@@ -6,14 +6,19 @@ import { formatNums } from '../../utils/formatNums'
 import { fetchCoinsAndStats } from '../../redux/actions/coinsAndStatsA'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
 import CryptocurrsList from '../../components/CryptocurrsList'
+import { Link } from 'react-router-dom'
+import NewsList from '../../components/NewsLists'
+import { fetchNews } from '../../redux/actions/newsA'
 
 const Home: React.FC = () => {
    const limit = 10;
    const dispatch = useAppDispatch()
    const { stats, isFetching, coins } = useTypedSelector(state => state.coinsAndStats)
+   const { news } = useTypedSelector(state => state.news)
 
    useEffect(() => {
       dispatch(fetchCoinsAndStats(limit))
+      dispatch(fetchNews({ limit: 10 }))
    }, [])
 
    return (
@@ -94,8 +99,22 @@ const Home: React.FC = () => {
                <h2 className="crypto-top__title">
                   Top 10 Cryptocurrencies in the world
                </h2>
+               <Link to={'/cryptocurrencies'} className='crypto-top__link'>
+                  Show more
+               </Link>
             </div>
             <CryptocurrsList coins={coins} />
+         </div>
+         <div className="home-news">
+            <div className="home-news__head">
+               <h2 className="home-news__title">
+                  Recent News
+               </h2>
+               <Link to="/news" className='crypto-top__link'>
+                  Show more
+               </Link>
+            </div>
+            <NewsList news={news} />
          </div>
       </div>
    )

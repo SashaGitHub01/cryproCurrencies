@@ -1,10 +1,12 @@
 import { coinrankingApi } from './index'
-import { ICoin, ICoinrankRes, IStats } from './types/coinranking'
+import { ICoin, ICoinrankRes, IFetchCurrenciesParams, IStats } from './types/coinranking'
 
 export class CoinrankingApi {
-   static fetchStatsAndCoins = async (limit: number = 10): Promise<{ stats: IStats, coins: ICoin[] }> => {
-      const { data } = await coinrankingApi.get<ICoinrankRes<{ stats: IStats, coins: ICoin[] }>>(`/coins?limit=${limit}`)
+   static fetchStatsAndCoins =
+      async ({ limit, search, offset }: IFetchCurrenciesParams): Promise<{ stats: IStats, coins: ICoin[] }> => {
+         const path = `/coins?limit=${limit}${offset ? '&offset=' + offset : ''}${search ? '&search=' + search : ''}`
+         const { data } = await coinrankingApi.get<ICoinrankRes<{ stats: IStats, coins: ICoin[] }>>(path)
 
-      return data.data
-   }
+         return data.data
+      }
 }

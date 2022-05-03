@@ -30,3 +30,9 @@ export interface ICoin {
    "24hVolume": number,
    "btcPrice": number
 }
+
+export interface IFetchCurrenciesParams {
+   search?: string,
+   limit: number,
+   offset?: number
+}

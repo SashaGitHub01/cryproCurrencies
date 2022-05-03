@@ -2,7 +2,7 @@
 @import "../../styles/mixins";
 
 .header {
-   background-image: radial-gradient(at right 60%, $bg_secondary, $bg_primary);
+   background-image: radial-gradient(at right 60%, $bg_green, $bg_primary);
    position: fixed;
    height: 100vh;
    width: $header_width;
