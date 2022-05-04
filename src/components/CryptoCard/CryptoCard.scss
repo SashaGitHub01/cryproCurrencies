@@ -29,6 +29,8 @@
    &__name {
       @include font-md;
       font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
    }
 
    &__body {

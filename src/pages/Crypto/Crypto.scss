@@ -1,0 +1,184 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.crypto {
+   &__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2.25rem 0.5rem;
+      border-top: 2px solid rgba(255, 255, 255, 0.342);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.342);
+   }
+   &__main-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+   }
+   &__img {
+      flex: 0 0 50px;
+   }
+
+   &__names {
+   }
+
+   &__symbol {
+      @include font-sm;
+   }
+
+   &__name {
+      @include font-xl;
+      font-weight: 500;
+   }
+
+   & .crypto-prices {
+      display: flex;
+      align-items: center;
+
+      &__value {
+         padding-right: 0.5rem;
+         @include font-xl;
+         font-weight: 500;
+      }
+      &__change {
+         display: flex;
+         align-items: center;
+         gap: 0.3rem;
+         & span {
+         }
+
+         &--p {
+            color: rgb(12, 224, 12);
+         }
+
+         &--n {
+            color: rgb(255, 87, 87);
+         }
+      }
+      .change-icon {
+         font-size: 2rem;
+         &--down {
+            color: rgb(255, 87, 87);
+         }
+
+         &--up {
+            color: rgb(12, 224, 12);
+         }
+      }
+   }
+
+   &__content {
+   }
+
+   &__about {
+   }
+   &__what {
+      @include font-lg;
+      font-weight: 600;
+      padding-bottom: 1rem;
+   }
+   .cr-descr {
+      display: flex;
+      gap: 3rem;
+
+      @media (max-width: $lg) {
+         flex-direction: column;
+      }
+
+      a {
+         color: $bg_primary;
+      }
+
+      &__html {
+      }
+
+      &__list {
+         flex: 0 0 200px;
+      }
+      &__list-name {
+         @include font-lg;
+      }
+
+      &__links {
+      }
+      .crypto-link {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0.8rem 0;
+         gap: 1.2rem;
+         border-bottom: 1px solid rgb(231, 231, 231);
+         border-top: 1px solid rgb(231, 231, 231);
+
+         &:first-child {
+            border-top: 0;
+         }
+
+         &__title {
+            font-weight: 500;
+         }
+         &__url {
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+//stats
+.cryptodet-stats {
+   padding: 2.5rem 0;
+   &__lists {
+      display: flex;
+      justify-content: space-between;
+      gap: 4rem;
+
+      @media (max-width: $lg) {
+         flex-direction: column;
+      }
+   }
+
+   &__list-cont {
+      max-width: 400px;
+      width: 100%;
+   }
+   &__title {
+      @include font-lg;
+      font-weight: 500;
+      padding: 0.5rem 0;
+   }
+
+   &__list {
+   }
+   & .crypto-st-item {
+      padding: 1rem;
+      border-bottom: 1px solid rgb(231, 231, 231);
+      border-top: 1px solid rgb(231, 231, 231);
+
+      .stat-i {
+         font-size: 2rem;
+         color: #fff;
+      }
+
+      &:first-child {
+         border-top: 0;
+      }
+
+      &__cont {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         @include font-md;
+      }
+      &__title {
+         display: flex;
+         align-items: center;
+         gap: 0.4rem;
+         span {
+            font-weight: 300;
+         }
+      }
+      &__value {
+         font-weight: 600;
+      }
+   }
+}

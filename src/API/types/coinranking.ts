@@ -31,8 +31,37 @@ export interface ICoin {
    "btcPrice": number
 }
 
+export interface ICoinDetails extends ICoin {
+   description: string,
+   websiteUrl: string,
+   "numberOfMarkets": number,
+   "numberOfExchanges": number,
+   "supply": {
+      "confirmed": boolean,
+      "total": number,
+      "circulating": number
+   },
+   "allTimeHigh": {
+      "price": number,
+      "timestamp": number
+   },
+
+   links: [
+      {
+         "name": string,
+         "url": string,
+         "type": string
+      },
+   ]
+}
+
 export interface IFetchCurrenciesParams {
    search?: string,
    limit: number,
    offset?: number
+}
+
+export interface IFetchCoinDetails {
+   id: string,
+   period?: string
 }
