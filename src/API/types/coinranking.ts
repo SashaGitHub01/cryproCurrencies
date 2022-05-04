@@ -65,3 +65,8 @@ export interface IFetchCoinDetails {
    id: string,
    period?: string
 }
+
+export interface IHistory {
+   "price": number,
+   "timestamp": number
+}

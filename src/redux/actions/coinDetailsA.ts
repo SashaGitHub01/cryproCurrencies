@@ -4,11 +4,23 @@ import { IFetchCoinDetails } from "../../API/types/coinranking";
 
 export const fetchCoinDetails = createAsyncThunk(
    'coin/fetchDetails',
-   async (options:IFetchCoinDetails, thunk) => {
+   async (options: IFetchCoinDetails, thunk) => {
       try {
          const res = await CoinrankingApi.fetchCoin(options)
          return res;
-      }catch(err:any) {
+      } catch (err: any) {
+         return thunk.rejectWithValue(err.message)
+      }
+   }
+)
+
+export const fetchCoinHistory = createAsyncThunk(
+   'coin/fetchHistory',
+   async (options: IFetchCoinDetails, thunk) => {
+      try {
+         const res = await CoinrankingApi.fetchCoinHistory(options)
+         return res;
+      } catch (err: any) {
          return thunk.rejectWithValue(err.message)
       }
    }

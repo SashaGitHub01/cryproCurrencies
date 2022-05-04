@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ICoinDetails } from "../../API/types/coinranking";
-import { fetchCoinDetails } from "../actions/coinDetailsA";
+import { ICoinDetails, IHistory } from "../../API/types/coinranking";
+import { fetchCoinDetails, fetchCoinHistory } from "../actions/coinDetailsA";
 import { IState } from "../types/coinDetails";
 
 const initialState: IState = {
    coin: null,
    isFetching: false,
-   error: null
+   error: null,
+   history: []
 }
 
 const coinDetailsSlice = createSlice({
@@ -28,6 +29,10 @@ const coinDetailsSlice = createSlice({
       [fetchCoinDetails.pending.type]: (state) => {
          state.isFetching = true;
       },
+
+      [fetchCoinHistory.fulfilled.type]: (state, action: PayloadAction<{ history: IHistory[], change: number }>) => {
+         state.history = action.payload.history
+      }
    }
 })
 

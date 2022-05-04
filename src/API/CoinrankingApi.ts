@@ -1,5 +1,5 @@
 import { coinrankingApi } from './index'
-import { ICoin, ICoinDetails, ICoinrankRes, IFetchCoinDetails, IFetchCurrenciesParams, IStats } from './types/coinranking'
+import { ICoin, ICoinDetails, ICoinrankRes, IFetchCoinDetails, IFetchCurrenciesParams, IHistory, IStats } from './types/coinranking'
 
 export class CoinrankingApi {
    static fetchStatsAndCoins =
@@ -15,5 +15,12 @@ export class CoinrankingApi {
       const { data } = await coinrankingApi.get<ICoinrankRes<{ coin: ICoinDetails }>>(path)
 
       return data.data.coin
+   }
+
+   static fetchCoinHistory = async ({ id, period }: IFetchCoinDetails): Promise<{ history: IHistory[], change: number }> => {
+      const path = `/coin/${id}/history?timePeriod=${period ? period : '7d'}`
+      const { data } = await coinrankingApi.get<ICoinrankRes<{ history: IHistory[], change: number }>>(path)
+
+      return data.data
    }
 }
