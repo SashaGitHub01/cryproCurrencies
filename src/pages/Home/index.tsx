@@ -118,11 +118,9 @@ const Home: React.FC = () => {
                   Show more
                </Link>
             </div>
-            {isFetchingNews
-               ? <Loader />
-               : news
-                  ? <NewsList news={news} />
-                  : <Loader />
+            {news
+               ? <NewsList news={news} />
+               : null
             }
          </div>
       </div>

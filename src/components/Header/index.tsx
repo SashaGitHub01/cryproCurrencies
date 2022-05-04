@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                      <span>Crypto currencies</span>
                   </div>
                </NavLink>
-               <NavLink className="nav__item nav-item" to={'/exchange'}>
+               <NavLink className="nav__item nav-item" to={'/exchanges'}>
                   <ExchangeIcon className='nav-item__icon' />
                   <div className="nav-item__link">
                      <span>Exchange</span>

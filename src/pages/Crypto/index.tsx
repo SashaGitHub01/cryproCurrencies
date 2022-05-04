@@ -4,7 +4,7 @@ import './Crypto.scss'
 import Loader from '../../components/Loader'
 import { useAppDispatch } from '../../hooks/useAppDispatch'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
-import { fetchCoinDetails, fetchCoinHistory } from '../../redux/actions/coinDetailsA'
+import { fetchCoinDetails } from '../../redux/actions/coinDetailsA'
 import { ArrowDownIcon, ArrowUpIcon } from '../../images/icons'
 import { formatPrice } from '../../utils/formatPrice'
 import parse from 'html-react-parser';
@@ -12,7 +12,7 @@ import CryptoStats from '../../components/CryptoStats'
 import { useCustomSearchParams } from '../../hooks/useCustomSearchParams'
 
 const Crypto = () => {
-   const [params, setParams] = useCustomSearchParams()
+   const [params] = useCustomSearchParams()
    const dispatch = useAppDispatch()
    const { id } = useParams()
    const { coin, isFetching } = useTypedSelector(state => state.coinDetails)

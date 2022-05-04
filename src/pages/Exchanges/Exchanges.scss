@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.exchanges {
+   &__head {
+   }
+   &__title {
+      font-weight: 500;
+      @include font-h2;
+   }
+
+   &__content {
+      padding: 1rem 0;
+   }
+   .exchange-table {
+   }
+}

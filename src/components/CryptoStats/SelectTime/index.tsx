@@ -42,7 +42,7 @@ const SelectTime: React.FC<SelectTimeProps> = () => {
             onChange={handleChange}
          >
             {timeValues.map((t) => (
-               <Select.Option value={t.value}>
+               <Select.Option value={t.value} key={t.title}>
                   {t.title}
                </Select.Option>
             ))}
