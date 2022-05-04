@@ -31,7 +31,7 @@ const coinDetailsSlice = createSlice({
       },
 
       [fetchCoinHistory.fulfilled.type]: (state, action: PayloadAction<{ history: IHistory[], change: number }>) => {
-         state.history = action.payload.history
+         state.history = action.payload.history.reverse()
       }
    }
 })

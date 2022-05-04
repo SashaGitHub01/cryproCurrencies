@@ -9,17 +9,20 @@ import { ArrowDownIcon, ArrowUpIcon } from '../../images/icons'
 import { formatPrice } from '../../utils/formatPrice'
 import parse from 'html-react-parser';
 import CryptoStats from '../../components/CryptoStats'
-
-const timeValues = ['24h', '7d', '30d', '3m', '1y', '5y']
+import { useCustomSearchParams } from '../../hooks/useCustomSearchParams'
 
 const Crypto = () => {
+   const [params, setParams] = useCustomSearchParams()
    const dispatch = useAppDispatch()
    const { id } = useParams()
-   const { coin, isFetching, history } = useTypedSelector(state => state.coinDetails)
+   const { coin, isFetching } = useTypedSelector(state => state.coinDetails)
 
    useEffect(() => {
-      dispatch(fetchCoinDetails({ id: id as string, }))
-      dispatch(fetchCoinHistory({ id: id as string, }))
+      const options = {
+         id: id as string,
+         period: params?.period
+      }
+      dispatch(fetchCoinDetails(options))
    }, [])
 
    return (
@@ -61,7 +64,7 @@ const Crypto = () => {
                      </div>
                   </div>
                   <div className="crypto__content">
-                     <CryptoStats history={history} coin={coin} />
+                     <CryptoStats coin={coin} id={id as string} />
                      <div className="crypto__about">
                         <div className="crypto__what">
                            What is {coin.name}?
@@ -80,7 +83,7 @@ const Crypto = () => {
                                        <div className="crypto-link__title">
                                           {link.type}
                                        </div>
-                                       <a className="crypto-link__url" href={link.url} target='_blank'>
+                                       <a className="crypto-link__url" href={link.url} target='_blank' rel="noreferrer">
                                           {link.name}
                                        </a>
                                     </li>

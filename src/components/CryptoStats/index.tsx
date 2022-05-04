@@ -1,5 +1,5 @@
 import millify from 'millify'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ICoinDetails, IHistory } from '../../API/types/coinranking'
 import { formatNums } from '../../utils/formatNums'
 import { formatPrice } from '../../utils/formatPrice'
@@ -13,13 +13,30 @@ import {
    VolIcon,
 } from '../../images/icons'
 import Chart from '../../components/Chart'
+import SelectTime from './SelectTime'
+import { useCustomSearchParams } from '../../hooks/useCustomSearchParams'
+import { fetchCoinHistory } from '../../redux/actions/coinDetailsA'
+import { useAppDispatch } from '../../hooks/useAppDispatch'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
 
 interface CryptoStatsProps {
    coin: ICoinDetails,
-   history: IHistory[]
+   history?: IHistory[],
+   id: string
 }
 
-const CryptoStats: React.FC<CryptoStatsProps> = ({ coin, history }) => {
+const CryptoStats: React.FC<CryptoStatsProps> = ({ coin, id }) => {
+   const history = useTypedSelector(state => state.coinDetails.history)
+   const dispatch = useAppDispatch()
+   const [params, setParams] = useCustomSearchParams()
+
+   useEffect(() => {
+      const options = {
+         id: id as string,
+         period: params?.period
+      }
+      dispatch(fetchCoinHistory(options))
+   }, [params.period])
 
    const stats = [
       { title: 'USD Price', value: `${coin?.marketCap ? formatPrice(coin?.price) : '-'}`, Icon: <UsdIcon className='stat-i' /> },
@@ -40,6 +57,7 @@ const CryptoStats: React.FC<CryptoStatsProps> = ({ coin, history }) => {
 
    return (
       <div className="crypto__stats cryptodet-stats">
+         <SelectTime />
          <div className="cryptodet-stats__lists">
             <div className="cryptodet-stats__list-cont">
                <div className="cryptodet-stats__title">

@@ -1,2 +1,60 @@
 @import "../../styles/mixins";
 @import "../../styles/variables";
+
+.cryptodet-stats {
+   padding: 2.5rem 0;
+   &__lists {
+      display: flex;
+      justify-content: space-between;
+      gap: 4rem;
+
+      @media (max-width: $lg) {
+         flex-direction: column;
+      }
+   }
+
+   &__list-cont {
+      max-width: 400px;
+      width: 100%;
+   }
+   &__title {
+      @include font-lg;
+      font-weight: 500;
+      padding: 0.5rem 0;
+   }
+
+   &__list {
+   }
+   & .crypto-st-item {
+      padding: 1rem;
+      border-bottom: 1px solid rgb(231, 231, 231);
+      border-top: 1px solid rgb(231, 231, 231);
+
+      .stat-i {
+         font-size: 2rem;
+         color: #fff;
+      }
+
+      &:first-child {
+         border-top: 0;
+      }
+
+      &__cont {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         @include font-md;
+      }
+      &__title {
+         display: flex;
+         align-items: center;
+         gap: 0.4rem;
+         span {
+            font-weight: 300;
+         }
+      }
+      &__value {
+         font-weight: 600;
+      }
+   }
+}

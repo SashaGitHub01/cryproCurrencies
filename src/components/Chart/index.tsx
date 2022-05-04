@@ -42,7 +42,7 @@ const Chart: React.FC<ChartProps> = ({ history }) => {
          legend: {
             display: false
          },
-      }
+      },
    }
    const data = {
       labels: history.map(h => formatTimestamp(h?.timestamp)),
@@ -50,8 +50,8 @@ const Chart: React.FC<ChartProps> = ({ history }) => {
          {
             label: 'Price in USD',
             data: history.map(h => h.price),
-            borderColor: '#0afcb3b7',
-            backgroundColor: '#5040e2a4',
+            borderColor: '#f5f5f5',
+            backgroundColor: '#00ffea6f',
             fill: true,
             borderWidth: 2,
          }
