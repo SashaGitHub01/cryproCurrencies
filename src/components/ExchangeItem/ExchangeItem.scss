@@ -1,0 +1,56 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+.exchg-item {
+   padding: 1.5rem 0;
+   border-bottom: 1px solid #fff;
+   border-top: 1px solid #fff;
+
+   &:first-child {
+      border-top: 0;
+   }
+
+   &__row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+   }
+
+   &__info {
+      display: flex;
+      gap: 0.75rem;
+      flex: 0 1 300px;
+      min-width: 150px;
+   }
+
+   &__rank {
+      display: flex;
+      align-items: center;
+   }
+
+   &__img {
+      display: flex;
+      align-items: center;
+      flex: 0 0 35px;
+   }
+   &__name {
+      font-weight: 500;
+      @include font-md;
+   }
+
+   & .exchg-form {
+      display: flex;
+      align-items: center;
+      flex: 0 1 auto;
+      gap: 1rem;
+      width: 100%;
+      justify-content: flex-end;
+
+      &__input {
+         width: 100%;
+         max-width: 250px;
+      }
+      &__equal {
+         font-size: 2.4rem;
+      }
+   }
+}
