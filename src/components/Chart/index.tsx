@@ -43,6 +43,14 @@ const Chart: React.FC<ChartProps> = ({ history }) => {
             display: false
          },
       },
+
+      scales: {
+         x: {
+            ticks: {
+               display: false
+            }
+         }
+      }
    }
    const data = {
       labels: history.map(h => formatTimestamp(h?.timestamp)),
@@ -54,6 +62,7 @@ const Chart: React.FC<ChartProps> = ({ history }) => {
             backgroundColor: '#00ffea6f',
             fill: true,
             borderWidth: 2,
+            radius: 1
          }
       ]
    }
