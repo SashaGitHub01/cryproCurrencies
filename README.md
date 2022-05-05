@@ -1,5 +1,5 @@
 # Crypto App  
-###Tech stack: React, TypeScript, Redux-toolkit, antd, SCSS, BEM, Coinbase API, News API
+### Tech stack: React, TypeScript, Redux-toolkit, antd, SCSS, BEM, Coinbase API, News API
 
 
 https://quiet-quokka-668ce5.netlify.app/
